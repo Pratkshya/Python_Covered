@@ -1,8 +1,11 @@
 import time,os
 myTodo = []
-f = open("Todo list Management System", "r")
-myTodo = eval(f.read())
-f.close()
+try:
+  f = open("Todo list Management System", "r")
+  myTodo = eval(f.read())
+  f.close()
+except:
+  print("Error: Unable to load")  
 
 def prettyPrint():
     for row in myTodo:
