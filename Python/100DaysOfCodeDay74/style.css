@@ -1,0 +1,26 @@
+html, body{
+  height: 100%;
+  width: 100%;
+  font-family: sans-serif;
+  background-color: black;
+  color: white;
+}
+
+h1,h2{
+  font-weight: bold;
+  font-size: 38px;
+}
+h2{
+  font-size: 30px;
+}
+p{
+  background-color: rgba(57, 56, 56, 0.603);
+  padding: 20px;
+}
+img{
+  display: block;
+  background-color: rgba(57, 56, 56, 0.603);
+  padding: 20px;
+  margin: auto;
+  width: 80%;
+}
