@@ -1,0 +1,30 @@
+div{
+  height: 100vh;
+  background-color: rgb(28, 27, 27);
+  text-align: center;
+  color: white;
+  font-family: sans-serif;
+}
+
+img{
+  height: 50%;
+  display: block;
+  margin: auto;
+  padding-top: 3rem;
+}
+
+h5{
+  font-size: 11px;
+}
+
+h3{
+  font-size: 25px;
+}
+ul li{
+  list-style: none;
+}
+
+a{
+  color: white;
+  text-decoration: none;
+}
