@@ -1,0 +1,108 @@
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  line-height: 1.6;
+}
+
+h1 {
+  background-color: #4caf50;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin: 0;
+}
+
+h3 {
+  color: #4caf50;
+  margin-top: 30px;
+}
+
+ul, dl {
+  margin: 20px;
+  padding: 0;
+}
+
+ul li {
+  list-style: square inside;
+  margin-bottom: 10px;
+}
+
+dl dt {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+dl dd {
+  margin-left: 20px;
+  color: #555;
+}
+
+/* Table Styles */
+table {
+  margin: 20px;
+  border-collapse: collapse;
+  width: 90%;
+}
+
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+table th {
+  background-color: #4caf50;
+  color: white;
+}
+
+table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+table tr:hover {
+  background-color: #f1f1f1;
+}
+footer {
+  text-align: center;
+  margin: 30px 0;
+}
+
+/* Button Styles */
+button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button a {
+  text-decoration: none;
+  color: white;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  body {
+    font-size: 90%;
+  }
+
+  table {
+    font-size: 14px;
+  }
+
+  button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
