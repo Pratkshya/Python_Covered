@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forms</title>
+</head>
+<body>
+  <form method="post" action="/process">
+    <p>Name: <input type="text" placeholder="user name" name="username" required></p>
+    <p>Email: <input type="email" placeholder="thor@email.com" name="email" required></p>
+    <input type="hidden" name="userID" value="123">
+    <p>Gender: <select name="gender">
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="other">Other</option>
+    </select>
+    </p>
+    <button type="submit">Save data</button>
+    
+  </form>
+</body>
+</html>
