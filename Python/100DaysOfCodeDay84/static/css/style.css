@@ -1,0 +1,144 @@
+/* Global Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f4f8;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+h1, h3, p {
+  text-align: center;
+  color: #333;
+}
+
+/* Header Style */
+h1 {
+  color: #4CAF50;
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+}
+
+p {
+  font-size: 1em;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+/* Links Styling */
+a {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #4CAF50;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: 0.3s ease;
+  font-size: 1.2em;
+}
+
+a:hover {
+  background-color: #45a049;
+  transform: scale(1.1);
+}
+
+/* Add animation to links */
+a {
+  animation: fadeIn 1.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Button Hover Effects */
+a:hover {
+  background-color: #45a049;
+  transform: scale(1.1);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Style (Signup and Login Pages) */
+form {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  margin: 20px auto;
+}
+
+input[type="text"], input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #4CAF50;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+input[type="submit"]:active {
+  transform: scale(1);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Welcome Page Style */
+.welcome-page {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  width: 400px;
+  margin: 20px auto;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-page h1 {
+  color: #4CAF50;
+}
+
+/* Home Page Style */
+.home-page {
+  margin-top: 50px;
+}
+
+.home-page h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.home-page p {
+  font-size: 1.1em;
+  color: #666;
+}

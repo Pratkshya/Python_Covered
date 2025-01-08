@@ -24,7 +24,7 @@ def register():
 
     #save to MySQL database
     conn = get_db_connection()
-    cursor = conn.cursor()
+    cursor = conn.cursor() #cursor object
     
     try:
       cursor.execute(
