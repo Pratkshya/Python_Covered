@@ -1,8 +1,11 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, session
 from werkzeug.security import generate_password_hash, check_password_hash
 import mysql.connector
 
 app = Flask(__name__)
+
+#sets the secret key to use sessions
+app.secret_key = "thisisencrypted@12"
 
 #Initialize database
 def initialize_db():
@@ -27,6 +30,8 @@ def homePage():
 #Signup page route
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
+  session.pop('username', None)
+
   if request.method == 'POST':
     username = request.form['username']
     name = request.form['name']
@@ -40,6 +45,12 @@ def signup():
     cursor = conn.cursor()
     
     try:
+
+      cursor.execute("SELECT username FROM USERS WHERE username = %s", (username,))
+      existing_user = cursor.fetchone()
+
+      if existing_user:
+        return "Error: Username already exists. Please, choose a different username!"
       #adds data to the database
       cursor.execute(
         # INSERT is a sql query which tells db to add new record with the given values
@@ -55,11 +66,14 @@ def signup():
     finally:
       cursor.close()
       conn.close()
-  return render_template('signup.html')    
+  return render_template('signup.html')   
 
 #Login page route
 @app.route('/login', methods=['POST', 'GET'])
 def login():
+  if 'username' in session:
+    return redirect(url_for('hello', username=session['username']))
+
   if request.method == 'POST':
     username = request.form['username']
     password = request.form['password']
@@ -72,19 +86,31 @@ def login():
     cursor.close()
     conn.close()
     
-    #checks if the username exists in the db
     if user:
       if check_password_hash(user['password'], password):
-        return redirect(url_for('hello', username=username))
+          # Store username in session after login
+          session['username'] = username
+          return redirect(url_for('hello', username=username))
       else:
-        return "Incorrect password."
+          return "Incorrect password."
     else:
-      return "Username not found."  
-  return render_template('login.html')  
+      return "Username not found."
+
+  return render_template('login.html')
+
+@app.route('/logout')
+def logout():
+  session.clear()
+  return redirect('/index.html')
 
 @app.route('/hello/<username>')
 def hello(username):
-  return f"User {username}, you are logged in successfully!!"
+  if 'username' in session:
+    page = f"""User {username}, you are logged in successfully!"
+    <button type="button" onClick="location.href='/logout'">Logout</button>"""
+    return page
+  else:
+      return redirect(url_for('login'))
 
 if __name__ == '__main__':
   app.run(host='0.0.0.0', port=5008, debug=True)

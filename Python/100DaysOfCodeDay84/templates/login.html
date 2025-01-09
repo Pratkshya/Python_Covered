@@ -6,7 +6,7 @@
   <title>log in</title>
 </head>
 <body>
-  <form action="/login", method="post">
+  <form method="post">
 
     <label for="username">Username: </label>
     <input type="text" name="username" id="username" required><br><br>
@@ -16,5 +16,7 @@
 
     <button type="submit">LOGIN</button>  
   </form>
+  <p>Don't have an acocunt? <a href="{{url_for('signup')}}">Sign up</a></p>
+
 </body>
 </html>
