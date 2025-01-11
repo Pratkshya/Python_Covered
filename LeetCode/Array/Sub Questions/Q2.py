@@ -10,6 +10,6 @@ def twoSum(nums, target):
         isSeen[num] = "seen"
     return pairs    
 
-nums = [1,5,3,9,6,4,2]
+nums = [3, 5, 1, 7, 5]
 target = 8
 print(twoSum(nums,target))
