@@ -8,3 +8,4 @@ image = qr.make_image(fill_color='black', black_color='white')
 image.save(fileName)
 print(f"QR Code saved as a {fileName}")
 
+ 
